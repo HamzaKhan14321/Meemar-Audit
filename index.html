@@ -71,6 +71,29 @@ small{font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:upperca
 .callout{padding:14px 18px;border-radius:var(--r);background:var(--gold-s);border:1px solid var(--gold-b);font-size:14px;color:#3d2a08;margin-top:16px}
 .callout b{color:#7a5a10}
 
+/* ---- EVIDENCE PACK ---- */
+.evidence-pack{background:linear-gradient(180deg,#ffffff,#fbfdff);border-color:#d8e3ed}
+.evidence-lead{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-bottom:14px}
+.evidence-panel{padding:18px;border-radius:var(--r);border:1px solid var(--line);background:#fff;box-shadow:var(--sh-sm)}
+.evidence-panel h4{margin-bottom:8px}
+.evidence-panel p{font-size:13px}
+.evidence-list{display:grid;gap:8px;margin-top:12px}
+.evidence-line{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:10px 12px;border-radius:10px;background:#f7fafc;border:1px solid var(--line);font-size:13px}
+.evidence-line b{font-size:12px}
+.evidence-line span{color:var(--muted)}
+.evidence-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}
+.evidence-card{padding:14px;border-radius:var(--r);border:1px solid var(--line);background:#fff;box-shadow:var(--sh-sm)}
+.evidence-card small{display:block;color:var(--muted);margin-bottom:7px}
+.evidence-card strong{display:block;color:var(--ink);font-size:15px;line-height:1.2;margin-bottom:5px}
+.evidence-card p{font-size:12px;color:var(--muted)}
+.evidence-boundary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.boundary-card{padding:14px;border-radius:var(--r);border:1px solid var(--line);background:#fafbfc}
+.boundary-card.good{background:var(--green-s);border-color:var(--green-b)}
+.boundary-card.warn{background:var(--gold-s);border-color:var(--gold-b)}
+.boundary-card.stop{background:var(--red-s);border-color:var(--red-b)}
+.boundary-card small{display:block;margin-bottom:6px;color:var(--muted)}
+.boundary-card p{font-size:13px}
+
 /* ---- HERO ---- */
 .hero{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:44px 48px;background:linear-gradient(140deg,#0c1825 0%,#15304a 60%,#1a3a52 100%);color:#fff;margin-bottom:18px;border:1px solid rgba(255,255,255,.07);box-shadow:0 6px 28px rgba(12,24,37,.18)}
 .hero>*{position:relative;z-index:1}
@@ -503,7 +526,8 @@ body::before{
 /* Responsive */
 @media(max-width:900px){
   .hero-stats,.out-grid,.bench-grid,.score-grid,.final-grid,.about-grid{grid-template-columns:1fr 1fr}
-  .rhythm-grid,.row-2,.row-3,.role-flow{grid-template-columns:1fr}
+  .rhythm-grid,.row-2,.row-3,.role-flow,.evidence-lead,.evidence-boundary{grid-template-columns:1fr}
+  .evidence-grid{grid-template-columns:1fr 1fr}
   .role-arrow{display:none}
   .a-strip,.decision-strip{grid-template-columns:1fr 1fr}
   .analytics-head{display:block}
@@ -520,7 +544,8 @@ body::before{
   .co-banner{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:520px){
-  .hero-stats,.out-grid,.bench-grid,.score-grid,.final-grid,.about-grid,.a-strip,.sister-grid,.decision-strip{grid-template-columns:1fr}
+  .hero-stats,.out-grid,.bench-grid,.score-grid,.final-grid,.about-grid,.a-strip,.sister-grid,.decision-strip,.evidence-grid{grid-template-columns:1fr}
+  .evidence-line{grid-template-columns:1fr}
   .wrap{padding:18px 12px 54px;max-width:100%;overflow:hidden}
   .hero,.section,.final,.platform,.about-left,.about-card,.co-banner{max-width:100%}
   .section-head{flex-direction:column;align-items:flex-start}
@@ -1586,17 +1611,46 @@ body::before{
 <!-- ============================================================ -->
 <!-- 12  CLOSING                                                   -->
 <!-- ============================================================ -->
-<section class="section">
+<section class="section evidence-pack">
   <div class="section-head">
-    <div><h2>Research Evidence Pack</h2><p class="section-note">The main audit stays compact. The supporting DOCX gives management a deeper source trail for review.</p></div>
-    <span class="pill pill-dark">CEO Edition</span>
+    <div><h2>Research Evidence Pack</h2><p class="section-note">This closing pack records what was reviewed, what the evidence proves, and where the data boundary sits. It supports the audit without turning the main presentation into a long screenshot dump.</p></div>
+    <span class="pill pill-dark">Verification Layer</span>
   </div>
+  <div class="evidence-lead">
+    <div class="evidence-panel">
+      <h4>Evidence Sources Reviewed</h4>
+      <p>The audit was built from supplied platform analytics, public-facing checks, and routing observations. Each source was used to confirm a specific business signal rather than to create unsupported growth claims.</p>
+      <div class="evidence-list">
+        <div class="evidence-line"><b>Meta platforms</b><span>Facebook and Instagram views, reach, engagement, profile visits, link taps, comments, shares, and audience direction.</span></div>
+        <div class="evidence-line"><b>Video channels</b><span>TikTok viewer/follower data and YouTube views, subscribers, likes, shares, and recent activity.</span></div>
+        <div class="evidence-line"><b>Search layer</b><span>Google Search Console clicks, impressions, CTR, average position, and website search demand.</span></div>
+        <div class="evidence-line"><b>Trust checks</b><span>Website copy, project-page clarity, Linktree routing, WhatsApp path, profile bios, highlights, and visible credibility issues.</span></div>
+      </div>
+    </div>
+    <div class="evidence-panel">
+      <h4>How To Read This Pack</h4>
+      <p>This is not a second pitch. It is the audit trail behind the recommendation: where the numbers came from, what they mean, what should be fixed first, and what should not be claimed until tracking data exists.</p>
+      <div class="callout"><b>Owner-safe rule:</b> reach and engagement are verified signals; leads, bookings, sales, revenue, CPL, and ROI are not claimed because those figures were not provided.</div>
+    </div>
+  </div>
+  <div class="evidence-grid">
+    <div class="evidence-card"><small>Strongest reach proof</small><strong>Facebook Developments</strong><p>4.1M views and 1.6M viewers show that Memaar already has attention at scale.</p></div>
+    <div class="evidence-card"><small>Action leak proof</small><strong>Instagram Developments</strong><p>8 external link taps from 476 profile visits show that profile action needs a cleaner CTA path.</p></div>
+    <div class="evidence-card"><small>Follower capture proof</small><strong>TikTok Developments</strong><p>254 followers from 68.5K viewers show weak follow conversion despite meaningful visibility.</p></div>
+    <div class="evidence-card"><small>Search proof</small><strong>Google Search Console</strong><p>550 clicks, 10.3K impressions, 5.4% CTR, and average position 7 show useful organic demand.</p></div>
+  </div>
+  <div class="evidence-boundary">
+    <div class="boundary-card good"><small>Verified In Audit</small><p>Platform reach, viewers, followers, reactions, comments, shares, profile visits, link taps, search clicks, impressions, CTR, website issues, and routing observations.</p></div>
+    <div class="boundary-card warn"><small>Needs Tracking Next</small><p>WhatsApp inquiry source, lead quality, project-page clicks, ad account spend, campaign objective results, booking source, and CRM or sales attribution.</p></div>
+    <div class="boundary-card stop"><small>Not Claimed</small><p>No confirmed ROI, CPL, revenue, sales, booking, lead volume, or guaranteed growth claim is made in this audit.</p></div>
+  </div>
+  <div class="divider"></div>
   <div class="row-3">
-    <div class="ib"><small>Research Notes &amp; Audit Logic</small><p>Categorized findings and reasoning used to shape the audit direction — organized for internal review.</p></div>
-    <div class="ib"><small>Screenshots &amp; Files</small><p>Platform, Linktree, website, and supporting visual evidence reviewed during the audit process.</p></div>
-    <div class="ib"><small>Data Boundaries</small><p>Clear notes on what was verified and what was not provided — including missing lead, CPL, booking, and revenue data.</p></div>
+    <div class="ib"><small>Audit Logic</small><p>The review compares visibility, engagement, follower capture, link/action rate, search demand, website trust, platform role clarity, and monthly content consistency.</p></div>
+    <div class="ib"><small>Evidence Handling</small><p>Supporting screenshots and platform exports should be kept as an internal appendix or secure folder, not displayed in full inside the owner-facing audit.</p></div>
+    <div class="ib"><small>Management Use</small><p>Use this pack to verify why the recommendation focuses on content structure, CTA routing, profile trust, website cleanup, and monthly measurement.</p></div>
   </div>
-  <p class="source-note"><b>Document provided as evidence support only.</b> It does not add unsupported ROI, revenue, CPL, booking, sales, or lead claims. The evidence pack supports the HTML presentation without turning the main audit into a long report.</p>
+  <p class="source-note"><b>Evidence support only.</b> This section does not add new performance claims. It documents the source logic behind the audit and keeps the final recommendation grounded in verified supplied data.</p>
 </section>
 
 <footer>Memaar Digital Audit &amp; Optimized Content System &nbsp;·&nbsp; Prepared by Hamza Khan &nbsp;·&nbsp; Built from verified supplied data only.</footer>
